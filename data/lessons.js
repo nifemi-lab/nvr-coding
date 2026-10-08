@@ -313,6 +313,14 @@
         { "id": "t13l3", "title": "Practice Task", "steps": [
           { "type": "text", "heading": "Make one poster", "body": "Open Canva, pick one template, change the headline to 'NVR Coding', and swap the main color. Two tweaks, one clean poster. Screenshot it — that's your first proof-of-work.", "analogy": "Small edits on a good template beat blank-page panic." },
           { "type": "write", "heading": "Your turn ✍️", "body": "Log the headline you'd put on that poster.", "expected": "", "mustInclude": ["console.log"], "hint": "console.log(\"NVR Coding\");" }
+        ]},
+        { "id": "t13l4", "title": "Branding Basics", "steps": [
+          { "type": "text", "heading": "Look and feel consistency", "body": "A brand is a promise told visually: same logo, same colors, same tone everywhere. Pick 2–3 colors, 1–2 fonts, a logo, and stick to them across your site, posts, and slides.", "analogy": "Branding is a costume — once you pick it, everyone recognizes you in the crowd." },
+          { "type": "quiz", "question": "What makes branding effective?", "options": ["Changing your look every post", "Consistent colors, fonts, and tone", "Using every color", "Hiding your logo"], "answer": 1, "explain": "Consistency builds recognition.", "hint": "Same costume." }
+        ]},
+        { "id": "t13l5", "title": "Intro to UX/UI", "steps": [
+          { "type": "text", "heading": "Design for humans", "body": "<b>UX</b> (user experience) is how it feels to use something; <b>UI</b> (user interface) is how it looks. Good UX = clear, fast, frustration-free. Good UI = pretty and organized. Both need each other.", "analogy": "UX is the door handle that works; UI is the pretty paint on it." },
+          { "type": "quiz", "question": "UX is mainly about…", "options": ["Colors", "How easy it is to use", "Logos", "Fonts"], "answer": 1, "explain": "UX = usability and feel.", "hint": "Door handle that works." }
         ]}
       ]
     }

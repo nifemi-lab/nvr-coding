@@ -146,4 +146,11 @@ function onNext() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight' && !document.getElementById('nextBtn').disabled) onNext();
+    if (e.key === 'ArrowLeft' && stepIdx > 0) { stepIdx--; renderStep(); }
+  });
+});
