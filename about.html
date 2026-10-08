@@ -28,7 +28,24 @@
   </div>
   <h2 style="margin:24px 0 8px">What you can learn</h2>
   <p>How the web works, front-end (HTML/CSS/JS), back-end (Node/Express/APIs/databases), SQL, Git, JavaScript foundations, Python, dev tools, design basics (Canva/UX-UI), web safety, career path, and React basics.</p>
+  <h2 style="margin:24px 0 8px">Send us a note 📬</h2>
+  <form id="contactForm" onsubmit="return false;" style="display:grid;gap:10px;max-width:420px">
+    <input id="cfName" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
+    <textarea id="cfMsg" placeholder="What do you think?" rows="4" style="padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)"></textarea>
+    <button class="btn primary" type="submit">Send 💌</button>
+  </form>
+  <p id="cfThanks" class="tiny" style="margin-top:8px"></p>
+
   <p class="tiny" style="margin-top:20px">Built with 🧠 by a bro, for bros. No signup, no tracking, all progress stays in your browser.</p>
 </main>
+<script>
+  document.getElementById('contactForm').onsubmit = () => {
+    const msgs = JSON.parse(localStorage.getItem('nvr_feedback') || '[]');
+    msgs.push({ name: document.getElementById('cfName').value, msg: document.getElementById('cfMsg').value, at: new Date().toISOString() });
+    localStorage.setItem('nvr_feedback', JSON.stringify(msgs));
+    document.getElementById('cfThanks').textContent = '🙌 Thanks! Your feedback was saved locally.';
+    document.getElementById('cfName').value = ''; document.getElementById('cfMsg').value = '';
+  };
+</script>
 </body>
 </html>

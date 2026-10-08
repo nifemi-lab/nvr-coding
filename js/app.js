@@ -143,11 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const trackList = document.getElementById('trackList');
   if (trackList) {
     const data = window.LESSONS;
-    trackList.innerHTML = data.tracks.map(t => `
+    trackList.innerHTML = data.tracks.map(t => {
+      const allDone = t.lessons.every(l => isDone(l.id));
+      return `
         <div class="track">
           <h3>${t.icon} ${t.title}</h3>
           ${t.lessons.map(l => `<a href="lesson.html?lesson=${l.id}">${isDone(l.id) ? '✅' : '○'} ${l.title}</a>`).join('')}
-        </div>`).join('');
+          ${allDone ? `<br><a href="certificate.html?track=${t.id}" style="color:var(--accent);font-weight:700">🏆 Track complete — get your certificate</a>` : ''}
+        </div>`;
+    }).join('');
   }
 });
 

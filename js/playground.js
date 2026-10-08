@@ -1,4 +1,4 @@
-// NVR Coding — free playground (with syntax colors)
+// NVR Coding — free playground (JS + Python via Pyodide)
 const TEMPLATES = {
   hello: 'const name = "you";\nconsole.log("Hello, " + name + "!");',
   loop: 'for (let i = 1; i <= 5; i++) {\n  console.log("Count: " + i);\n}',
@@ -17,9 +17,30 @@ function highlight(code) {
     .replace(/\b(\d+)\b/g, '<span style="color:#34d399">$1</span>');
 }
 
+let lang = 'js';
+let pyodideRef = null;
+
+async function runPython(code, out) {
+  if (!pyodideRef) {
+    out.textContent = '⏳ Loading Python engine (first run downloads ~10MB)…';
+    const mod = await import('https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.mjs');
+    pyodideRef = await mod.loadPyodide();
+  }
+  const lines = [];
+  pyodideRef.setStdout({ batched: s => lines.push(s) });
+  try {
+    pyodideRef.runPython(code);
+    out.textContent = lines.join('\n') || '(no output — use print())';
+  } catch (e) {
+    out.textContent = '🐛 ' + e.message;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const editor = document.getElementById('editor');
   const preview = document.getElementById('highlight');
+  const out = document.getElementById('out');
+
   document.querySelectorAll('[data-tpl]').forEach(b => b.onclick = () => {
     editor.value = TEMPLATES[b.dataset.tpl];
     preview.innerHTML = highlight(editor.value);
@@ -27,13 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
   editor.addEventListener('input', () => { preview.innerHTML = highlight(editor.value); });
   preview.innerHTML = highlight(editor.value);
 
-  document.getElementById('runBtn').onclick = () => {
-    const out = [];
+  const setLang = (l) => {
+    lang = l;
+    document.getElementById('langJs').style.fontWeight = l === 'js' ? '700' : '400';
+    document.getElementById('langPy').style.fontWeight = l === 'py' ? '700' : '400';
+    document.getElementById('langNote').textContent = l === 'py' ? 'Runs with Pyodide (needs internet first time)' : '';
+    if (l === 'py') { editor.value = 'name = "Ada"\nprint(f"Hello, {name}!")\nfor i in range(3):\n    print(i)'; preview.innerHTML = highlight(editor.value); }
+  };
+  document.getElementById('langJs').onclick = () => setLang('js');
+  document.getElementById('langPy').onclick = () => setLang('py');
+
+  document.getElementById('runBtn').onclick = async () => {
+    if (lang === 'py') { await runPython(editor.value, out); return; }
+    const outLines = [];
     try {
-      new Function('console', editor.value)({ log: (...a) => out.push(a.join(' ')) });
-      document.getElementById('out').textContent = out.join('\n') || '(no output — use console.log 😉)';
+      new Function('console', editor.value)({ log: (...a) => outLines.push(a.join(' ')) });
+      out.textContent = outLines.join('\n') || '(no output — use console.log 😉)';
     } catch (e) {
-      document.getElementById('out').textContent = '🐛 ' + e.message;
+      out.textContent = '🐛 ' + e.message;
     }
   };
 });

@@ -64,7 +64,17 @@ footer{text-align:center;color:var(--muted);padding:30px;border-top:1px solid va
 .feedback.ok{color:var(--accent)}
 .feedback.err{color:#f87171}
 .nav-row{display:flex;justify-content:space-between;margin-top:20px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* === Space animations === */
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+@keyframes drift { from { background-position:0 0; } to { background-position:240px 900px; } }
+@keyframes floaty { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+.card, .track, .lesson-card, .hero { animation: fadeUp .55s ease both; }
+body { animation: drift 90s linear infinite; }
+.brand { display:inline-block; animation: floaty 5s ease-in-out infinite; }
+.btn { transition: transform .15s ease, filter .15s ease; }
+.btn:hover { transform: translateY(-2px); }
 @media print{
   body{background:#fff;color:#000}
   .topbar,.btn,.nav-row,#themeBtn{display:none!important}

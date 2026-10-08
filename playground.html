@@ -34,6 +34,11 @@
       <button class="btn ghost" data-tpl="object">📄 Objects</button>
       <button class="btn ghost" data-tpl="fetch">🌐 Fetch</button>
     </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap">
+      <button class="btn ghost" id="langJs" style="font-weight:700">🟨 JS</button>
+      <button class="btn ghost" id="langPy">🐍 Python</button>
+      <span class="tiny" id="langNote" style="margin:0"></span>
+    </div>
     <textarea class="code-editor" id="editor" spellcheck="false" style="min-height:220px">console.log("Play with me!");</textarea>
     <pre id="highlight" class="console" style="margin-top:12px;white-space:pre-wrap"></pre>
     <button class="btn primary" id="runBtn">▶ Run</button>
