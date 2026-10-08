@@ -135,11 +135,21 @@ function onNext() {
     markDone(lesson.id);
     addXP(25);
     celebrate();
+    const allDone = store.get('done', []);
+    let nextId = null;
+    for (const t of window.LESSONS.tracks) {
+      const i = t.lessons.findIndex(l => l.id === lesson.id);
+      if (i >= 0 && i < t.lessons.length - 1) { nextId = t.lessons[i + 1].id; break; }
+    }
+
     $('lessonArea').innerHTML = `
       <h2>🎉 Lesson complete!</h2>
       <p>You showed up, you recalled, you built. That's exactly how the brain learns.</p>
       <p class="analogy">Come back tomorrow for your streak 🔥 and your spaced review.</p>
-      <a class="btn primary" href="index.html">Back to roadmap</a>`;
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn primary" href="index.html">Back to roadmap</a>
+        ${nextId ? `<a class="btn ghost" href="lesson.html?lesson=${nextId}">Next lesson →</a>` : '<span class="pill">🏁 You finished the whole track!</span>'}
+      </div>`;
     $('nextBtn').disabled = true;
     $('nextBtn').style.display = 'none';
     $('prevBtn').style.display = 'none';
