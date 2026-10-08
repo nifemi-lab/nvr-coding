@@ -11,7 +11,27 @@ function renderPills() {
   if (s) s.textContent = streak;
 }
 
-function addXP(n) { store.set('xp', store.get('xp', 0) + n); renderPills(); }
+function addXP(n) { store.set('xp', store.get('xp', 0) + n); renderPills(); trackActivity(); }
+function trackActivity() {
+  const days = store.get('activity', {});
+  const key = new Date().toDateString();
+  days[key] = (days[key] || 0) + 1;
+  store.set('activity', days);
+}
+function renderHeatmap() {
+  const el = document.getElementById('heatmap');
+  if (!el) return;
+  const days = store.get('activity', {});
+  const today = new Date();
+  let html = '';
+  for (let i = 27; i >= 0; i--) {
+    const d = new Date(today - i * 864e5);
+    const n = days[d.toDateString()] || 0;
+    const shade = n === 0 ? 'var(--surface2)' : n < 2 ? '#7dd3fc55' : n < 4 ? '#7dd3fc99' : '#7dd3fc';
+    html += `<span title="${d.toDateString()}: ${n} actions" style="width:16px;height:16px;border-radius:4px;background:${shade}"></span>`;
+  }
+  el.innerHTML = html;
+}
 
 function touchStreak() {
   const today = new Date().toDateString();
@@ -79,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPills();
   renderBadges();
   renderProgress();
+  renderHeatmap();
 
   // Theme: apply saved, then wire toggle
   const applyTheme = t => { document.documentElement.dataset.theme = t; store.set('theme', t);
@@ -108,6 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Share + print buttons
+  const shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) shareBtn.onclick = () => {
+    const text = `I'm learning with NVR Coding 🧠 — ${store.get('xp', 0)} XP, ${store.get('streak', 0)}-day streak, ${store.get('done', []).length} lessons done!`;
+    navigator.clipboard?.writeText(text).then(() => { shareBtn.textContent = '✅ Copied!'; setTimeout(() => shareBtn.textContent = '🔗 Copy my stats', 1500); }).catch(() => prompt('Copy this:', text));
+  };
+  const printBtn = document.getElementById('printBtn');
+  if (printBtn) printBtn.onclick = () => window.print();
 
   // Landing page: render tracks from lessons data
   const trackList = document.getElementById('trackList');

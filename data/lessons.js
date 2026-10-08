@@ -377,6 +377,51 @@
           { "type": "quiz", "question": "What does a CDN mainly do?", "options": ["Blocks users", "Serves content from servers near the user for speed", "Writes your HTML", "Deletes old files"], "answer": 1, "explain": "Closer copy = faster load.", "hint": "Franchise locations." }
         ]}
       ]
+    },
+    {
+      "id": "track17",
+      "icon": "⚛️",
+      "title": "Track 17 — Quantum Computing Basics",
+      "lessons": [
+        { "id": "t17l1", "title": "Bits vs Qubits", "steps": [
+          { "type": "text", "heading": "A different kind of math", "body": "Normal computers think in <b>bits</b> (0 or 1). Quantum computers use <b>qubits</b>, which can be 0, 1, or both at once (superposition). That lets them explore many possibilities in parallel — great for certain hard problems.", "analogy": "A bit is a light switch. A qubit is a dimmer that’s on and off at the same time until you look." },
+          { "type": "quiz", "question": "What’s special about a qubit?", "options": ["It’s always 0", "It can be 0, 1, or both at once", "It runs twice as fast", "It only stores 1s"], "answer": 1, "explain": "Superposition lets qubits hold both states until measured.", "hint": "Dimmer switch trick." }
+        ]},
+        { "id": "t17l2", "title": "Why It Matters", "steps": [
+          { "type": "text", "heading": "Jobs for the quantum age", "body": "Quantum computers could crack drug discovery, cryptography, and logistics optimization. Even if you never program one, knowing the basics makes you a smarter builder of the future.", "analogy": "Like knowing how a rocket engine works, even if you drive a car." },
+          { "type": "quiz", "question": "Which field is a natural fit for quantum computing?", "options": ["Simple websites", "Drug discovery and optimization", "CSS styling", "Image compression only"], "answer": 1, "explain": "Quantum shines where lots of possibilities must be explored.", "hint": "Hard puzzles love it." }
+        ]}
+      ]
+    },
+    {
+      "id": "track18",
+      "icon": "🧊",
+      "title": "Track 18 — 3D on the Web (Three.js)",
+      "lessons": [
+        { "id": "t18l1", "title": "The Browser as a Stage", "steps": [
+          { "type": "text", "heading": "Scene, camera, renderer", "body": "<b>Three.js</b> is a JS library that turns your browser into a 3D stage. You define a <b>scene</b> (what’s in it), a <b>camera</b> (where you look from), and a <b>renderer</b> (the screen that draws it).", "analogy": "Scene = the theater set, camera = your seat, renderer = the projector." },
+          { "type": "quiz", "question": "What does the renderer do?", "options": ["Makes coffee", "Draws the 3D scene to the screen", "Stores music", "Manages users"], "answer": 1, "explain": "Renderer paints the 3D world on your screen.", "hint": "Projector." }
+        ]},
+        { "id": "t18l2", "title": "Your First 3D Object", "steps": [
+          { "type": "text", "heading": "A spinning cube", "body": "You create a shape (like a cube), give it a material (color/texture), add a light, and spin it over time. That’s a web 3D starter — the rest is just more shapes and lights.", "analogy": "Building a 3D world is like a stop-motion film: one frame at a time." },
+          { "type": "quiz", "question": "What do you add so you can see an object?", "options": ["A light", "A CSS class", "A database", "A cookie"], "answer": 0, "explain": "No light, no visible shape.", "hint": "Stage needs lighting." }
+        ]}
+      ]
+    },
+    {
+      "id": "track19",
+      "icon": "🌿",
+      "title": "Track 19 — Git Internals",
+      "lessons": [
+        { "id": "t19l1", "title": "Commits Are Snapshots", "steps": [
+          { "type": "text", "heading": "Not just diffs", "body": "A <b>commit</b> is like a save point in a video game — it records a full snapshot of your project at that moment, linked to the previous one with a unique ID (hash).", "analogy": "Commits are save slots; you can load any of them." },
+          { "type": "quiz", "question": "What is a commit really?", "options": ["A small text diff only", "A snapshot of the project at a point in time", "A background process", "A bug report"], "answer": 1, "explain": "Every commit = full project snapshot.", "hint": "Save slot." }
+        ]},
+        { "id": "t19l2", "title": "Branches Are Just Pointers", "steps": [
+          { "type": "text", "heading": "Cheap and fast", "body": "A <b>branch</b> is just a movable name that points to a commit. Creating one costs almost nothing, and when you commit, the pointer moves forward — that’s why branches are so fast.", "analogy": "A branch is a sticky note on a commit saying 'this is where we are on this feature.'" },
+          { "type": "quiz", "question": "Why are branches cheap in Git?", "options": ["They copy the whole project", "They’re just pointers to commits", "They delete old files", "They compress everything"], "answer": 1, "explain": "A branch = a lightweight label on a commit.", "hint": "Sticky note, not a photocopy." }
+        ]}
+      ]
     }
   ]
 };
