@@ -122,6 +122,10 @@
           { "type": "text", "heading": "git add, git commit, git push", "body": "<b>git add</b> stages your changes, <b>git commit</b> snapshots them, <b>git push</b> uploads them to GitHub. That loop covers 90% of daily work.", "analogy": "Pack your box (add), label it (commit), ship it (push)." },
           { "type": "quiz", "question": "Which command uploads to GitHub?", "options": ["git add", "git commit", "git push", "git envy"], "answer": 2, "explain": "Push = upload the shipped box.", "hint": "Think shipping." },
           { "type": "write", "heading": "Your turn ✍️", "body": "Log the command that uploads your commits.", "expected": "git push", "mustInclude": ["console.log"], "hint": "console.log(\"git push\");" }
+        ]},
+        { "id": "t4l3", "title": "Branches: Safe Experiments", "steps": [
+          { "type": "text", "heading": "Try without fear", "body": "A <b>branch</b> is a parallel copy of your code. You can break it, experiment wildly, and merge it back only when it works. The main branch stays safe.", "analogy": "Like a sketchbook page you can crumple — your real painting stays hidden." },
+          { "type": "quiz", "question": "What's the point of a branch?", "options": ["Deleting code fast", "Experimenting safely without touching main code", "Hosting files", "Styling pages"], "answer": 1, "explain": "Branches = safe sandboxes for new ideas.", "hint": "Sketchbook page." }
         ]}
       ]
     },
@@ -139,6 +143,11 @@
           { "type": "text", "heading": "Four functions, one calculator", "body": "A calculator is just 4 tiny functions: add, subtract, multiply, divide. Write them small, test each one. Small pieces = easy debugging.", "analogy": "Lego bricks. Each brick works alone; together they become a whole castle." },
           { "type": "code", "heading": "Starter logic", "body": "Run it, then change the numbers.", "starter": "function add(a, b) { return a + b; }\nfunction multiply(a, b) { return a * b; }\nconsole.log(add(2, 3));\nconsole.log(multiply(4, 5));" },
           { "type": "write", "heading": "Your turn ✍️", "body": "Write a function called double that returns n * 2, then log double(21).", "expected": "42", "mustInclude": ["function double", "console.log"], "hint": "function double(n) { return n * 2; } console.log(double(21));" }
+        ]},
+        { "id": "t5l3", "title": "Project: Number Guesser", "steps": [
+          { "type": "text", "heading": "A game you can run", "body": "Pick a secret number, compare a guess to it, print 'higher' or 'lower'. Loops + conditions + console.log = a whole game.", "analogy": "A game is just rules written as code." },
+          { "type": "code", "heading": "Starter game", "body": "Run it, then change the secret or guess.", "starter": "const secret = 7;\nlet guess = 3;\nif (guess < secret) console.log(\"Higher!\");\nelse if (guess > secret) console.log(\"Lower!\");\nelse console.log(\"You got it!\");" },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Write code that logs \"Higher!\" if a guess (3) is below a secret (9).", "expected": "higher", "mustInclude": ["console.log", "if"], "hint": "if (3 < 9) console.log(\"Higher!\");" }
         ]}
       ]
     }
