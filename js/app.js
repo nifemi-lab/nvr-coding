@@ -114,6 +114,27 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
   };
 
+  // Random lesson button
+  const rb = document.getElementById('randomBtn');
+  if (rb) rb.onclick = (e) => {
+    e.preventDefault();
+    const all = window.LESSONS.tracks.flatMap(t => t.lessons);
+    const pick = all[Math.floor(Math.random() * all.length)];
+    location.href = 'lesson.html?lesson=' + pick.id;
+  };
+
+  // Welcome-back reminder banner
+  const lastVisit = store.get('lastVisit', null);
+  const todayStr = new Date().toDateString();
+  if (lastVisit && lastVisit !== todayStr) {
+    const b = document.createElement('div');
+    b.className = 'pill';
+    b.style.cssText = 'display:block;text-align:center;margin:20px auto 0;max-width:640px';
+    b.textContent = `👋 Welcome back! You had a ${store.get('streak', 0)}-day streak. Keep it alive!`;
+    document.querySelector('main').prepend(b);
+  }
+  store.set('lastVisit', todayStr);
+
   // Daily challenge: one lesson per day
   const dc = document.getElementById('dailyChallenge');
   if (dc) {
