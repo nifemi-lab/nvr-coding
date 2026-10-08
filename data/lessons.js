@@ -21,6 +21,10 @@
           { "type": "text", "heading": "URLs are just addresses", "body": "A URL like <code>https://example.com/page</code> has parts: the protocol (<b>https</b>), the domain (<b>example.com</b>), and the path (<b>/page</b>). That's it — a street address for the internet.", "analogy": "Protocol = delivery service, domain = the street, path = the house number." },
           { "type": "quiz", "question": "In https://example.com/about, what is “/about”?", "options": ["The protocol", "The domain", "The path", "The password"], "answer": 2, "explain": "The path points to a specific page on that domain.", "hint": "Where on the site?" },
           { "type": "code", "heading": "Practice output", "body": "Log your favorite website's address.", "starter": "console.log(\"https://myfavorite.site\");" }
+        ]},
+        { "id": "t0l3", "title": "HTTP Status Codes", "steps": [
+          { "type": "text", "heading": "Server's mood, in numbers", "body": "Every response has a status code: <b>200</b> OK, <b>404</b> not found, <b>500</b> server broke, <b>301</b> permanently moved. Learn to read them — they tell you where to debug.", "analogy": "Status codes are the server's emoji: 😊 200, 🤔 404, 💥 500." },
+          { "type": "quiz", "question": "What does 404 mean?", "options": ["Success", "Page not found", "Server crashed", "Moved forever"], "answer": 1, "explain": "404 = that thing isn't here.", "hint": "The classic missing page." }
         ]}
       ]
     },
@@ -52,6 +56,10 @@
           { "type": "text", "heading": "Pages react to you", "body": "An <b>event</b> is the page noticing something — a click, a keypress, a scroll. You attach a function to that event and your code runs at the perfect moment.", "analogy": "A doorbell. Press it (click), and something happens (handler runs)." },
           { "type": "quiz", "question": "What is an event in JS?", "options": ["A CSS rule", "The page noticing something like a click", "A database table", "A network error"], "answer": 1, "explain": "Events = clicks, keys, scrolls. Handlers = your response.", "hint": "The doorbell rings." },
           { "type": "write", "heading": "Your turn ✍️", "body": "Log the word 'clicked' — imagine it ran on a button press.", "expected": "clicked", "mustInclude": ["console.log"], "hint": "console.log(\"clicked\");" }
+        ]},
+        { "id": "t1l6", "title": "Forms: Talking to Your Site", "steps": [
+          { "type": "text", "heading": "Inputs and buttons", "body": "A <b>form</b> collects user input: text fields, checkboxes, buttons. Clicking submit sends the data to a server - that's how logins and signups work.", "analogy": "A form is a questionnaire dropped in the suggestion box." },
+          { "type": "quiz", "question": "What does a submit button do?", "options": ["Sends the form data onward", "Resets the page", "Styles the button", "Deletes the input"], "answer": 0, "explain": "Submit packages and sends the form data.", "hint": "It's where logs appear too." }
         ]}
       ]
     },
@@ -81,6 +89,10 @@
         { "id": "t2l5", "title": "JSON: Data's Favorite Format", "steps": [
           { "type": "text", "heading": "JSON is just object text", "body": "<b>JSON</b> (JavaScript Object Notation) is how servers send data. It looks like a JS object: <code>{\"name\": \"Ada\", \"age\": 36}</code>. APIs love it.", "analogy": "JSON is a shipping box format every country agrees on." },
           { "type": "quiz", "question": "What does an API usually send back?", "options": ["Videos only", "JSON data", "CSS files", "Emojis only"], "answer": 1, "explain": "JSON is the common language for data over HTTP.", "hint": "The agreeable shipping format." }
+        ]},
+        { "id": "t2l6", "title": "Environment Variables: Secrets", "steps": [
+          { "type": "text", "heading": "Keep secrets out of code", "body": "Never hardcode passwords or API keys in your code. Store them in <b>environment variables</b> - like a locked drawer only your server can open.", "analogy": "Env vars are a locked drawer; your code is the public room." },
+          { "type": "quiz", "question": "Where should API keys live?", "options": ["Hardcoded in the source", "In environment variables", "In a comment", "In the filename"], "answer": 1, "explain": "Env vars keep secrets out of the repo.", "hint": "Locked drawer." }
         ]}
       ]
     },
