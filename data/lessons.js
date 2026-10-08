@@ -422,6 +422,29 @@
           { "type": "quiz", "question": "Why are branches cheap in Git?", "options": ["They copy the whole project", "They’re just pointers to commits", "They delete old files", "They compress everything"], "answer": 1, "explain": "A branch = a lightweight label on a commit.", "hint": "Sticky note, not a photocopy." }
         ]}
       ]
+    },
+    {
+      "id": "track20",
+      "icon": "🎞️",
+      "title": "Track 20 — CSS Animations",
+      "lessons": [
+        { "id": "t20l1", "title": "Transitions vs Animations", "steps": [
+          { "type": "text", "heading": "Motion with purpose", "body": "CSS <b>transitions</b> animate a change (hover: color 0.3s). <b>Animations</b> run on their own timeline with keyframes (@keyframes). Hus, keep it subtle — motion should guide, not distract.", "analogy": "Transition = walking; animation = dancing. Both move, different vibes." },
+          { "type": "quiz", "question": "Which runs continuously by itself?", "options": ["transition", "animation", "hover", "display"], "answer": 1, "explain": "Animations loop or play solo; transitions need a trigger.", "hint": "Walking vs dancing." }
+        ]}
+      ]
+    },
+    {
+      "id": "track21",
+      "icon": "🔌",
+      "title": "Track 21 — APIs in Practice",
+      "lessons": [
+        { "id": "t21l1", "title": "Calling Real APIs", "steps": [
+          { "type": "text", "heading": "From JSON to jokes", "body": "Free APIs like JokeAPI or CatFacts give you JSON. Use fetch to grab it, pick the field you need, and show it on your page. That's a real app feature.", "analogy": "An API call is like ordering from a menu — you ask, they send back a plate." },
+          { "type": "code", "heading": "Try the pattern", "body": "Run to see the flow (network may not work offline).", "starter": "fetch(\"https://api.example.com/data\")\n  .then(r => r.json())\n  .then(d => console.log(d));" },
+          { "type": "quiz", "question": "What do APIs usually return?", "options": ["HTML pages only", "JSON data", "ZIP files only", "Videos"], "answer": 1, "explain": "JSON is the lingua franca of APIs.", "hint": "Shipping boxes of data." }
+        ]}
+      ]
     }
   ]
 };
