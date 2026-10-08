@@ -130,6 +130,10 @@
         { "id": "t4l3", "title": "Branches: Safe Experiments", "steps": [
           { "type": "text", "heading": "Try without fear", "body": "A <b>branch</b> is a parallel copy of your code. You can break it, experiment wildly, and merge it back only when it works. The main branch stays safe.", "analogy": "Like a sketchbook page you can crumple — your real painting stays hidden." },
           { "type": "quiz", "question": "What's the point of a branch?", "options": ["Deleting code fast", "Experimenting safely without touching main code", "Hosting files", "Styling pages"], "answer": 1, "explain": "Branches = safe sandboxes for new ideas.", "hint": "Sketchbook page." }
+        ]},
+        { "id": "t4l4", "title": "Pull Requests & Code Review", "steps": [
+          { "type": "text", "heading": "Teamwork, organized", "body": "A <b>pull request (PR)</b> is how you say “hey, review my work before it joins the main code.” Teammates comment, you fix, then merge. It’s a safety gate and a learning moment.", "analogy": "A PR is handing in homework and a friend suggests edits before the teacher grades it." },
+          { "type": "quiz", "question": "What is a pull request for?", "options": ["Deleting branches", "Getting code reviewed before merging", "Uploading files", "Running tests"], "answer": 1, "explain": "PR = review + merge gate.", "hint": "Homework review." }
         ]}
       ]
     },
@@ -152,6 +156,11 @@
           { "type": "text", "heading": "A game you can run", "body": "Pick a secret number, compare a guess to it, print 'higher' or 'lower'. Loops + conditions + console.log = a whole game.", "analogy": "A game is just rules written as code." },
           { "type": "code", "heading": "Starter game", "body": "Run it, then change the secret or guess.", "starter": "const secret = 7;\nlet guess = 3;\nif (guess < secret) console.log(\"Higher!\");\nelse if (guess > secret) console.log(\"Lower!\");\nelse console.log(\"You got it!\");" },
           { "type": "write", "heading": "Your turn ✍️", "body": "Write code that logs \"Higher!\" if a guess (3) is below a secret (9).", "expected": "higher", "mustInclude": ["console.log", "if"], "hint": "if (3 < 9) console.log(\"Higher!\");" }
+        ]},
+        { "id": "t5l4", "title": "Project: Weather Dashboard Logic", "steps": [
+          { "type": "text", "heading": "Turn numbers into advice", "body": "A dashboard is data + a little logic. Here: a temperature decides the message — cold, comfy, or hot. Same idea every weather app uses.", "analogy": "The app is a tiny weatherman giving one-line forecasts." },
+          { "type": "code", "heading": "Starter logic", "body": "Run it, change temp.", "starter": "const temp = 22;\nif (temp < 10) console.log(\"Freezing day!\");\nelse if (temp <= 25) console.log(\"Perfect weather!\");\nelse console.log(\"It’s a scorcher!\");" },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Log \"Perfect weather!\" when a temp (20) is between 10 and 25.", "expected": "perfect weather", "mustInclude": ["console.log", "if"], "hint": "if (20 >= 10 && 20 <= 25) console.log(\"Perfect weather!\");" }
         ]}
       ]
     },
