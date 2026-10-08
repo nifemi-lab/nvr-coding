@@ -87,6 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const tb = document.getElementById('themeBtn');
   if (tb) tb.onclick = () => applyTheme(store.get('theme', 'dark') === 'dark' ? 'light' : 'dark');
 
+  // Daily challenge: one lesson per day
+  const dc = document.getElementById('dailyChallenge');
+  if (dc) {
+    const all = window.LESSONS.tracks.flatMap(t => t.lessons.map(l => ({ ...l, track: t.title })));
+    const pick = all[new Date().getDate() % all.length];
+    dc.innerHTML = `🎯 Daily challenge: <a href="lesson.html?lesson=${pick.id}" style="color:var(--accent)">${pick.title}</a> — ${pick.track}`;
+  }
+
+  // Search filter
+  const search = document.getElementById('search');
+  if (search) {
+    search.addEventListener('input', () => {
+      const q = search.value.toLowerCase();
+      document.querySelectorAll('#trackList .track').forEach(tr => {
+        const links = [...tr.querySelectorAll('a')];
+        let any = false;
+        links.forEach(a => { const show = a.textContent.toLowerCase().includes(q); a.style.display = show ? '' : 'none'; if (show) any = true; });
+        tr.style.display = any ? '' : 'none';
+      });
+    });
+  }
+
   // Landing page: render tracks from lessons data
   const trackList = document.getElementById('trackList');
   if (trackList) {
