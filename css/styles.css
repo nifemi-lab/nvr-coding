@@ -7,6 +7,14 @@
   --bg:#f4f6fb; --surface:#ffffff; --surface2:#eceff7; --border:#d9dfeb;
   --text:#1c2536; --muted:#5a6983;
 }
+[data-theme="mars"]{
+  --bg:#2a0f0a; --surface:#3d1810; --surface2:#52231a; --border:#7c3a2b;
+  --text:#ffe8df; --muted:#d8a596; --accent:#fb923c; --accent2:#f87171;
+}
+[data-theme="moon"]{
+  --bg:#1a1a1f; --surface:#2a2a31; --surface2:#35353d; --border:#4a4a55;
+  --text:#e8e8ee; --muted:#a0a0b0; --accent:#c4b5fd; --accent2:#93c5fd;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;
   background-image:

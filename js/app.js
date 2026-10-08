@@ -91,7 +91,8 @@ function renderProgress() {
     return `<div class="card"><h3>${t.icon} ${t.title}</h3>
       <div class="progress" style="margin:10px 0 6px"><div style="width:${pct}%"></div></div>
       <p>${finished}/${total} lessons · ${pct}% complete</p></div>`;
-  }).join('') + `<div class="card"><h3>🔁 Review due</h3><p>${dueCount} concept(s) waiting</p></div>`;
+  }).join('') + `<div class="card"><h3>🔁 Review due</h3><p>${dueCount} concept(s) waiting</p></div>` +
+    `<div class="card"><h3>⏱️ Est. focus time</h3><p>${Math.round(store.get('xp', 0) * 0.8)} min</p></div>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -101,12 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProgress();
   renderHeatmap();
 
-  // Theme: apply saved, then wire toggle
+  // Theme: cycle dark → light → mars → moon, saved
+  const THEMES = ['dark', 'light', 'mars', 'moon'];
+  const ICONS = { dark: '🌙', light: '☀️', mars: '🔴', moon: '🌕' };
   const applyTheme = t => { document.documentElement.dataset.theme = t; store.set('theme', t);
-    const b = document.getElementById('themeBtn'); if (b) b.textContent = t === 'light' ? '☀️' : '🌙'; };
+    const b = document.getElementById('themeBtn'); if (b) b.textContent = ICONS[t] || '🌙'; };
   applyTheme(store.get('theme', 'dark'));
   const tb = document.getElementById('themeBtn');
-  if (tb) tb.onclick = () => applyTheme(store.get('theme', 'dark') === 'dark' ? 'light' : 'dark');
+  if (tb) tb.onclick = () => {
+    const cur = store.get('theme', 'dark');
+    applyTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
+  };
 
   // Daily challenge: one lesson per day
   const dc = document.getElementById('dailyChallenge');

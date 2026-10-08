@@ -1,3 +1,21 @@
+// Mini game: Number Guesser
+document.addEventListener('DOMContentLoaded', () => {
+  let secret = Math.ceil(Math.random() * 10), tries = 5;
+  const msg = document.getElementById('guessMsg');
+  const input = document.getElementById('guessInput');
+  const reset = () => { secret = Math.ceil(Math.random() * 10); tries = 5; msg.textContent = ''; input.value = ''; };
+  document.getElementById('newGameBtn').onclick = reset;
+  document.getElementById('guessBtn').onclick = () => {
+    const g = Number(input.value);
+    if (!g || g < 1 || g > 10) { msg.textContent = '🌱 Enter a number 1-10.'; return; }
+    tries--;
+    if (g === secret) { msg.textContent = '🎉 You got it! +15 XP'; addXP(15); celebrate(); setTimeout(reset, 2500); }
+    else if (tries <= 0) { msg.textContent = `💥 Out of tries! It was ${secret}.`; setTimeout(reset, 2500); }
+    else msg.textContent = g < secret ? `📈 Higher! ${tries} tries left.` : `📉 Lower! ${tries} tries left.`;
+  };
+});
+
+
 // NVR Coding — free playground (JS + Python via Pyodide)
 const TEMPLATES = {
   hello: 'const name = "you";\nconsole.log("Hello, " + name + "!");',
