@@ -202,6 +202,51 @@
           { "type": "quiz", "question": "Where do you type JavaScript live in the browser?", "options": ["The Console tab", "The Elements tab", "The Network tab", "Settings"], "answer": 0, "explain": "Console = live JS playground inside any page.", "hint": "It's where logs appear too." }
         ]}
       ]
+    },
+    {
+      "id": "track9",
+      "icon": "🎨",
+      "title": "Track 9 — CSS Deep Dive",
+      "lessons": [
+        { "id": "t9l1", "title": "Flexbox in 5 Minutes", "steps": [
+          { "type": "text", "heading": "Layout made easy", "body": "<b>Flexbox</b> lays out items in a row or column and centers them without hacks: <code>display: flex; justify-content: center; align-items: center;</code> — instant centered layout.", "analogy": "Flexbox is a shelf that nudges its items into perfect alignment for you." },
+          { "type": "quiz", "question": "Which property turns on Flexbox?", "options": ["display: grid", "display: flex", "position: center", "float: both"], "answer": 1, "explain": "display: flex activates flex layout.", "hint": "It's in the name." }
+        ]},
+        { "id": "t9l2", "title": "Make It Responsive", "steps": [
+          { "type": "text", "heading": "Phones too", "body": "Responsive CSS makes your site look good on any screen. Use relative units (<code>%</code>, <code>rem</code>) instead of fixed pixels, and a <b>media query</b> like <code>@media (max-width: 600px)</code> for small screens.", "analogy": "Responsive design is clothes that fit whether you're tall or short." },
+          { "type": "quiz", "question": "What does a media query do?", "options": ["Adds music", "Changes styles based on screen size", "Deletes CSS", "Hosts images"], "answer": 1, "explain": "@media rules adapt layout to the device.", "hint": "Phone vs desktop." }
+        ]}
+      ]
+    },
+    {
+      "id": "track10",
+      "icon": "🛡️",
+      "title": "Track 10 — Web Safety",
+      "lessons": [
+        { "id": "t10l1", "title": "Passwords & HTTPS", "steps": [
+          { "type": "text", "heading": "Locks and sealed letters", "body": "<b>HTTPS</b> encrypts what passes between you and a site — like a sealed, unbreakable letter. Always use unique, long passwords, and a password manager so you don't reuse them.", "analogy": "HTTPS is a sealed envelope; a password manager is your key cabinet." },
+          { "type": "quiz", "question": "What does HTTPS do?", "options": ["Makes sites colorful", "Encrypts data between you and the site", "Speeds up Wi-Fi", "Deletes cookies"], "answer": 1, "explain": "The S = Secure, via encryption.", "hint": "Sealed envelope." }
+        ]},
+        { "id": "t10l2", "title": "Don't Trust Raw Input", "steps": [
+          { "type": "text", "heading": "Users are unpredictable (on purpose)", "body": "Never build SQL or HTML directly from what a user typed — they might type something dangerous. Use parameterized queries and escape output. Rule one: <b>trust no input</b>.", "analogy": "Like a bouncer checking IDs at the door — every 'ID' gets checked, even lookalikes." },
+          { "type": "quiz", "question": "Why shouldn't you trust user input?", "options": ["Users hate typing", "It can be malicious or broken — always validate", "It's slow", "It costs money"], "answer": 1, "explain": "Validation stops bugs and attacks.", "hint": "Bouncer energy." }
+        ]}
+      ]
+    },
+    {
+      "id": "track11",
+      "icon": "🚀",
+      "title": "Track 11 — Career Path",
+      "lessons": [
+        { "id": "t11l1", "title": "From Learner to Builder", "steps": [
+          { "type": "text", "heading": "Skills → portfolio → first job", "body": "1) Finish the tracks. 2) Build 3 small projects (you can host them on GitHub Pages). 3) Write what you built on a short portfolio page. 4) Apply, keep learning, iterate. That ladder has worked for millions.", "analogy": "A portfolio is your highlight reel — show what you can make, not just what you know." },
+          { "type": "quiz", "question": "Best way to prove to employers you can code?", "options": ["Memorize syntax", "Show real projects you built", "Collect certificates only", "Watch videos"], "answer": 1, "explain": "Projects > promises.", "hint": "Highlight reel." }
+        ]},
+        { "id": "t11l2", "title": "How to Keep Learning", "steps": [
+          { "type": "text", "heading": "Consistency beats intensity", "body": "20 minutes a day beats 5 hours once a week — that's spaced practice. Build something you actually want to use, get feedback, and don't fear the bugs. Every senior dev was once confused by a semicolon.", "analogy": "Learning to code is like the gym: small reps daily, not one giant session." },
+          { "type": "quiz", "question": "Most effective study habit?", "options": ["One 8-hour weekend session", "Short, regular sessions", "Only watching videos", "Memorizing docs"], "answer": 1, "explain": "Spaced, short sessions win.", "hint": "Gym logic." }
+        ]}
+      ]
     }
   ]
 };
