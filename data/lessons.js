@@ -274,6 +274,10 @@
         { "id": "t11l2", "title": "How to Keep Learning", "steps": [
           { "type": "text", "heading": "Consistency beats intensity", "body": "20 minutes a day beats 5 hours once a week — that's spaced practice. Build something you actually want to use, get feedback, and don't fear the bugs. Every senior dev was once confused by a semicolon.", "analogy": "Learning to code is like the gym: small reps daily, not one giant session." },
           { "type": "quiz", "question": "Most effective study habit?", "options": ["One 8-hour weekend session", "Short, regular sessions", "Only watching videos", "Memorizing docs"], "answer": 1, "explain": "Spaced, short sessions win.", "hint": "Gym logic." }
+        ]},
+        { "id": "t11l3", "title": "How to Learn Anything", "steps": [
+          { "type": "text", "heading": "The recipe: recall, spacing, projects", "body": "A proven loop: <b>read a small chunk</b>, <b>recall it from memory</b>, <b>review it later</b>, <b>build something small</b>. Repeat daily. This works for code, music, languages — anything.", "analogy": "Like cooking: study the recipe, cook it, eat it, cook it again days later." },
+          { "type": "quiz", "question": "What does the winning loop include?", "options": ["Just watching videos", "Recall + spacing + building small things", "Reading the same page forever", "Only memorizing terms"], "answer": 1, "explain": "Recall, space, and build — that's the recipe.", "hint": "Read, recall, review, build." }
         ]}
       ]
     },
@@ -321,6 +325,10 @@
         { "id": "t13l5", "title": "Intro to UX/UI", "steps": [
           { "type": "text", "heading": "Design for humans", "body": "<b>UX</b> (user experience) is how it feels to use something; <b>UI</b> (user interface) is how it looks. Good UX = clear, fast, frustration-free. Good UI = pretty and organized. Both need each other.", "analogy": "UX is the door handle that works; UI is the pretty paint on it." },
           { "type": "quiz", "question": "UX is mainly about…", "options": ["Colors", "How easy it is to use", "Logos", "Fonts"], "answer": 1, "explain": "UX = usability and feel.", "hint": "Door handle that works." }
+        ]},
+        { "id": "t13l6", "title": "Meet Figma", "steps": [
+          { "type": "text", "heading": "Design in the browser together", "body": "<b>Figma</b> is like Canva's older sibling for UI/UX: you design app screens, websites, and prototypes, and your team can comment and edit in real time, all in the browser.", "analogy": "Figma is a shared whiteboard for app screens — everyone can scribble at once." },
+          { "type": "quiz", "question": "What is Figma mainly used for?", "options": ["Writing CSS", "Designing UI/UX screens and prototypes", "Databases", "Email hosting"], "answer": 1, "explain": "Figma = collaborative UI design.", "hint": "Shared whiteboard for apps." }
         ]}
       ]
     }
