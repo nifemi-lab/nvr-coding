@@ -331,6 +331,52 @@
           { "type": "quiz", "question": "What is Figma mainly used for?", "options": ["Writing CSS", "Designing UI/UX screens and prototypes", "Databases", "Email hosting"], "answer": 1, "explain": "Figma = collaborative UI design.", "hint": "Shared whiteboard for apps." }
         ]}
       ]
+    },
+    {
+      "id": "track14",
+      "icon": "🤖",
+      "title": "Track 14 — AI Basics",
+      "lessons": [
+        { "id": "t14l1", "title": "What AI Actually Is", "steps": [
+          { "type": "text", "heading": "Patterns, not magic", "body": "<b>AI</b> (artificial intelligence) is software that learns patterns from lots of examples and uses them to make guesses — like predicting the next word in a sentence. It doesn't think or understand; it predicts.", "analogy": "AI is a parrot that has seen so many conversations it sounds like it understands." },
+          { "type": "quiz", "question": "What does AI primarily do?", "options": ["Read minds", "Find and use patterns from examples", "Build hardware", "Replace electricity"], "answer": 1, "explain": "AI = pattern finder and predictor.", "hint": "Parrot with great memory." }
+        ]},
+        { "id": "t14l2", "title": "Prompts: Talking to AI", "steps": [
+          { "type": "text", "heading": "Ask clearly, get better answers", "body": "A <b>prompt</b> is what you type to an AI. Good prompts give context ('You are a JS tutor…') and a clear request ('Explain loops like I'm 10'). Small prompt changes = big answer changes.", "analogy": "A prompt is a recipe instruction — vague instructions, lumpy cake." },
+          { "type": "quiz", "question": "What makes a good prompt?", "options": ["One vague word", "Context + a clear request", "As long as possible", "No punctuation"], "answer": 1, "explain": "Context and clarity win.", "hint": "Clear recipe instructions." }
+        ]}
+      ]
+    },
+    {
+      "id": "track15",
+      "icon": "🧮",
+      "title": "Track 15 — Data Structures",
+      "lessons": [
+        { "id": "t15l1", "title": "Arrays: Ordered Lists", "steps": [
+          { "type": "text", "heading": "Collections in a line", "body": "An <b>array</b> is an ordered list of items: <code>[\"apple\", \"banana\", \"cherry\"]</code>. You can loop over it, count it (<code>.length</code>), and add/remove items.", "analogy": "An array is a shopping list written top to bottom." },
+          { "type": "quiz", "question": "Which property tells you how many items are in an array?", "options": [".count", ".length", ".size()", ".total"], "answer": 1, "explain": "arrays use .length in JS.", "hint": "It's a word, not a method." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Create an array called fruits with one item and log its length.", "expected": "1", "mustInclude": ["console.log", "fruits"], "hint": "const fruits = [\"apple\"]; console.log(fruits.length);" }
+        ]},
+        { "id": "t15l2", "title": "Objects: Labeled Bundles", "steps": [
+          { "type": "text", "heading": "Key-value pairs", "body": "An <b>object</b> bundles related data with labels: <code>{ name: \"Ada\", age: 36 }</code>. Unlike arrays, you access items by name (<code>user.name</code>) not by position.", "analogy": "An object is a character sheet in a game — name, level, HP all labeled." },
+          { "type": "quiz", "question": "How do you get an object's property?", "options": ["object[0]", "object.propertyName", "object->propertyName", "object(item)"], "answer": 1, "explain": "Dot notation reads labeled properties.", "hint": "Dot brings it home." }
+        ]}
+      ]
+    },
+    {
+      "id": "track16",
+      "icon": "☁️",
+      "title": "Track 16 — Cloud Basics",
+      "lessons": [
+        { "id": "t16l1", "title": "What the Cloud Is", "steps": [
+          { "type": "text", "heading": "Someone else's computer", "body": "The <b>cloud</b> is just someone else's computer running your app, 24/7, somewhere with a big power bill. Instead of buying a server, you rent space on AWS, Google Cloud, or Azure.", "analogy": "Cloud hosting is like a hotel room — you don't build the hotel, you just rent a room." },
+          { "type": "quiz", "question": "Why use the cloud?", "options": ["To save money on power bills at home", "No need to buy/maintain your own servers", "It makes code run faster always", "It's free forever"], "answer": 1, "explain": "Renting beats owning for most people.", "hint": "Hotel vs building your own hotel." }
+        ]},
+        { "id": "t16l2", "title": "CDNs: Copies Everywhere", "steps": [
+          { "type": "text", "heading": "Cache close to users", "body": "A <b>CDN</b> (Content Delivery Network) stores copies of your site's files on servers around the world, so users load from the nearest copy — fast anywhere.", "analogy": "A CDN is a chain of franchise restaurants — your food (site) is always nearby." },
+          { "type": "quiz", "question": "What does a CDN mainly do?", "options": ["Blocks users", "Serves content from servers near the user for speed", "Writes your HTML", "Deletes old files"], "answer": 1, "explain": "Closer copy = faster load.", "hint": "Franchise locations." }
+        ]}
+      ]
     }
   ]
 };
