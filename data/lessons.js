@@ -150,6 +150,58 @@
           { "type": "write", "heading": "Your turn ✍️", "body": "Write code that logs \"Higher!\" if a guess (3) is below a secret (9).", "expected": "higher", "mustInclude": ["console.log", "if"], "hint": "if (3 < 9) console.log(\"Higher!\");" }
         ]}
       ]
+    },
+    {
+      "id": "track6",
+      "icon": "💛",
+      "title": "Track 6 — JavaScript Foundations",
+      "lessons": [
+        { "id": "t6l1", "title": "Variables: Labeled Boxes", "steps": [
+          { "type": "text", "heading": "Boxes with names", "body": "A <b>variable</b> is a named box that stores a value: <code>let age = 25;</code>. Use <b>const</b> for things that won't change, <b>let</b> for things that will.", "analogy": "Variables are labeled lunchboxes. The label is the name, the food inside is the value." },
+          { "type": "quiz", "question": "Which keyword should you use when the value won't change?", "options": ["let", "const", "var", "if"], "answer": 1, "explain": "const = constant, it can't be reassigned.", "hint": "Think 'constant'." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Create a const called name with a string value, then log it.", "expected": "a", "mustInclude": ["const", "console.log"], "hint": "const name = \"Ada\"; console.log(name);" }
+        ]},
+        { "id": "t6l2", "title": "Functions: Reusable Recipes", "steps": [
+          { "type": "text", "heading": "Write once, run many", "body": "A <b>function</b> packages steps you can reuse: <code>function greet(name) { console.log('Hi ' + name); }</code>. Call it with different inputs and get different outputs.", "analogy": "A recipe. Write it once, cook it a hundred times." },
+          { "type": "quiz", "question": "Why use functions?", "options": ["To make code longer", "To reuse logic without rewriting it", "To delete variables", "To style pages"], "answer": 1, "explain": "Functions = reusable blocks of logic.", "hint": "Recipes, remember?" },
+          { "type": "code", "heading": "Call the recipe", "body": "Run it, then call greet with your name.", "starter": "function greet(name) { console.log('Hi ' + name); }\ngreet('Ada');" }
+        ]},
+        { "id": "t6l3", "title": "Loops: The Robot's Mantra", "steps": [
+          { "type": "text", "heading": "Repeat without repeating yourself", "body": "A <b>for loop</b> repeats code a set number of times: <code>for (let i = 0; i < 3; i++) { console.log(i); }</code> — prints 0, 1, 2. Computers never get bored.", "analogy": "A robot doing jumping jacks: 'again, again, again... stop at 10.'" },
+          { "type": "quiz", "question": "How many times does `for (let i = 0; i < 3; i++)` run?", "options": ["2", "3", "4", "Forever"], "answer": 1, "explain": "i = 0, 1, 2 → three runs.", "hint": "Count from zero." }
+        ]}
+      ]
+    },
+    {
+      "id": "track7",
+      "icon": "🐍",
+      "title": "Track 7 — Python for Beginners",
+      "lessons": [
+        { "id": "t7l1", "title": "Why Python?", "steps": [
+          { "type": "text", "heading": "The friendly giant", "body": "Python reads almost like English and is used for web apps, AI, data, and automation. If JavaScript is the language of the browser, Python is the language of everything else.", "analogy": "Python is the friendly giant — huge but gentle." },
+          { "type": "quiz", "question": "Which of these is Python famous for?", "options": ["Styling websites", "AI, data, and automation", "Image editing", "Video streaming"], "answer": 1, "explain": "Python powers a huge chunk of AI and data work.", "hint": "ChatGPT, spreadsheets, scripts..." }
+        ]},
+        { "id": "t7l2", "title": "Print & Variables in Python", "steps": [
+          { "type": "text", "heading": "Less punctuation, more thinking", "body": "In Python you write: <code>name = \"Ada\"</code> then <code>print(name)</code>. No semicolons, no curly braces — just indentation.", "analogy": "It’s like JavaScript without the traffic cones." },
+          { "type": "quiz", "question": "What prints text in Python?", "options": ["console.log", "print()", "echo", "say()"], "answer": 1, "explain": "Python uses print() where JS uses console.log.", "hint": "Just the word." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "In JS, simulate Python: log the word 'Hello from Python'.", "expected": "hello from python", "mustInclude": ["console.log"], "hint": "console.log(\"Hello from Python\");" }
+        ]}
+      ]
+    },
+    {
+      "id": "track8",
+      "icon": "🛠️",
+      "title": "Track 8 — Tools of the Trade",
+      "lessons": [
+        { "id": "t8l1", "title": "VS Code: Your Workshop", "steps": [
+          { "type": "text", "heading": "The editor pros use", "body": "<b>VS Code</b> is a free code editor with autocomplete, file explorer, terminal, and extensions. Learn the shortcuts: Ctrl+S saves, Ctrl+Z undoes, and the terminal runs your code.", "analogy": "VS Code is your workbench; extensions are your power tools." },
+          { "type": "quiz", "question": "What does Ctrl+S do?", "options": ["Closes everything", "Saves the file", "Searches Google", "Shuts down the PC"], "answer": 1, "explain": "Save early, save often.", "hint": "The most important shortcut." }
+        ]},
+        { "id": "t8l2", "title": "DevTools: X-Ray Vision", "steps": [
+          { "type": "text", "heading": "Inspect any website", "body": "Right-click any page → <b>Inspect</b>. You can see its HTML, change CSS live, and open the <b>Console</b> to run JavaScript. Every pro uses this daily.", "analogy": "DevTools are X-ray goggles for websites." },
+          { "type": "quiz", "question": "Where do you type JavaScript live in the browser?", "options": ["The Console tab", "The Elements tab", "The Network tab", "Settings"], "answer": 0, "explain": "Console = live JS playground inside any page.", "hint": "It's where logs appear too." }
+        ]}
+      ]
     }
   ]
 };
