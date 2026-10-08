@@ -47,6 +47,11 @@
         { "id": "t1l4", "title": "Fetching Data (APIs)", "steps": [
           { "type": "text", "heading": "Asking servers for data", "body": "`fetch()` is how the front-end asks a server for data. It returns a <b>Promise</b> — a box that fills later when the server answers.", "analogy": "Like ordering delivery: you get a receipt now, food arrives later." },
           { "type": "quiz", "question": "fetch() returns…", "options": ["A database", "A Promise (fills later)", "A CSS file", "Instant HTML"], "answer": 1, "explain": "Network takes time, so you get a Promise.", "hint": "A receipt, not the pizza." }
+        ]},
+        { "id": "t1l5", "title": "Events: Buttons That Do Things", "steps": [
+          { "type": "text", "heading": "Pages react to you", "body": "An <b>event</b> is the page noticing something — a click, a keypress, a scroll. You attach a function to that event and your code runs at the perfect moment.", "analogy": "A doorbell. Press it (click), and something happens (handler runs)." },
+          { "type": "quiz", "question": "What is an event in JS?", "options": ["A CSS rule", "The page noticing something like a click", "A database table", "A network error"], "answer": 1, "explain": "Events = clicks, keys, scrolls. Handlers = your response.", "hint": "The doorbell rings." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Log the word 'clicked' — imagine it ran on a button press.", "expected": "clicked", "mustInclude": ["console.log"], "hint": "console.log(\"clicked\");" }
         ]}
       ]
     },
@@ -72,6 +77,10 @@
         { "id": "t2l4", "title": "Databases in 60 Seconds", "steps": [
           { "type": "text", "heading": "Where data lives", "body": "A database is a structured warehouse for your app's data. SQL databases store tables (rows & columns); you ask for data with `SELECT`, add with `INSERT`.", "analogy": "A database is an Excel file that millions can read safely." },
           { "type": "quiz", "question": "Which SQL word asks for data?", "options": ["INSERT", "SELECT", "DELETE", "STYLE"], "answer": 1, "explain": "SELECT = give me this data.", "hint": "Like choosing items from a menu." }
+        ]},
+        { "id": "t2l5", "title": "JSON: Data's Favorite Format", "steps": [
+          { "type": "text", "heading": "JSON is just object text", "body": "<b>JSON</b> (JavaScript Object Notation) is how servers send data. It looks like a JS object: <code>{\"name\": \"Ada\", \"age\": 36}</code>. APIs love it.", "analogy": "JSON is a shipping box format every country agrees on." },
+          { "type": "quiz", "question": "What does an API usually send back?", "options": ["Videos only", "JSON data", "CSS files", "Emojis only"], "answer": 1, "explain": "JSON is the common language for data over HTTP.", "hint": "The agreeable shipping format." }
         ]}
       ]
     },
@@ -93,6 +102,10 @@
         { "id": "t3l3", "title": "WHERE: Filtering Data", "steps": [
           { "type": "text", "heading": "Narrow it down", "body": "`WHERE` filters rows: `SELECT * FROM users WHERE age > 18;` — only the rows matching the condition come back.", "analogy": "WHERE is the bouncer at the door: it checks IDs." },
           { "type": "quiz", "question": "What does WHERE do?", "options": ["Sorts the table", "Filters rows by a condition", "Deletes the table", "Adds columns"], "answer": 1, "explain": "WHERE picks only matching rows.", "hint": "Bouncer with a checklist." }
+        ]},
+        { "id": "t3l4", "title": "ORDER BY: Sorting Results", "steps": [
+          { "type": "text", "heading": "Make results behave", "body": "`ORDER BY` sorts your results: `SELECT * FROM users ORDER BY age DESC;` gives oldest first. Add `LIMIT 5` and you get only five rows — perfect for 'top 5' lists.", "analogy": "Like sorting a leaderboard before showing it on screen." },
+          { "type": "quiz", "question": "ORDER BY is used to…", "options": ["Delete rows", "Sort rows", "Create tables", "Encrypt data"], "answer": 1, "explain": "ORDER BY sorts the rows that come back.", "hint": "Leaderboard vibes 🏆" }
         ]}
       ]
     },
