@@ -296,6 +296,25 @@
           { "type": "quiz", "question": "Which way do props flow?", "options": ["Child to parent", "Parent to child", "Sideways", "To the server"], "answer": 1, "explain": "Props flow down the tree.", "hint": "Gifts from parent." }
         ]}
       ]
+    },
+    {
+      "id": "track13",
+      "icon": "🎨",
+      "title": "Track 13 — Design Basics (Canva & More)",
+      "lessons": [
+        { "id": "t13l1", "title": "Meet Canva", "steps": [
+          { "type": "text", "heading": "Design for everyone", "body": "<b>Canva</b> is a free tool where you drag, drop, and edit templates to make posters, logos, posts, and slides. You don't need to be a designer — you just follow good defaults.", "analogy": "Canva is like a pre-built recipe kit: the parts are measured, you just assemble and serve." },
+          { "type": "quiz", "question": "What is Canva primarily for?", "options": ["Writing code", "Designing graphics quickly with templates", "Editing videos only", "Database management"], "answer": 1, "explain": "Canva makes visual design fast and accessible.", "hint": "Think posters and posts." }
+        ]},
+        { "id": "t13l2", "title": "The 3 Rules That Make Anything Look Good", "steps": [
+          { "type": "text", "heading": "Color, type, space", "body": "1) Pick one main color and a neutral. 2) Use one big headline font + one readable body font. 3) Give everything room to breathe — empty space is not wasted, it's style.", "analogy": "A good design page is like a park bench: one focus, clear paths, no crowds." },
+          { "type": "quiz", "question": "The most important rule in that trio?", "options": ["Use as many colors as possible", "One main color + neutrals", "Use tiny fonts", "Fill every pixel"], "answer": 1, "explain": "Restraint = professionalism.", "hint": "Less is more." }
+        ]},
+        { "id": "t13l3", "title": "Practice Task", "steps": [
+          { "type": "text", "heading": "Make one poster", "body": "Open Canva, pick one template, change the headline to 'NVR Coding', and swap the main color. Two tweaks, one clean poster. Screenshot it — that's your first proof-of-work.", "analogy": "Small edits on a good template beat blank-page panic." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Log the headline you'd put on that poster.", "expected": "", "mustInclude": ["console.log"], "hint": "console.log(\"NVR Coding\");" }
+        ]}
+      ]
     }
   ]
 };
