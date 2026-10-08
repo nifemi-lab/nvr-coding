@@ -140,6 +140,7 @@ function onNext() {
       <p>You showed up, you recalled, you built. That's exactly how the brain learns.</p>
       <p class="analogy">Come back tomorrow for your streak 🔥 and your spaced review.</p>
       <a class="btn primary" href="index.html">Back to roadmap</a>`;
+    $('nextBtn').disabled = true;
     $('nextBtn').style.display = 'none';
     $('prevBtn').style.display = 'none';
     $('progressBar').style.width = '100%';
