@@ -106,6 +106,10 @@
         { "id": "t3l4", "title": "ORDER BY: Sorting Results", "steps": [
           { "type": "text", "heading": "Make results behave", "body": "`ORDER BY` sorts your results: `SELECT * FROM users ORDER BY age DESC;` gives oldest first. Add `LIMIT 5` and you get only five rows — perfect for 'top 5' lists.", "analogy": "Like sorting a leaderboard before showing it on screen." },
           { "type": "quiz", "question": "ORDER BY is used to…", "options": ["Delete rows", "Sort rows", "Create tables", "Encrypt data"], "answer": 1, "explain": "ORDER BY sorts the rows that come back.", "hint": "Leaderboard vibes 🏆" }
+        ]},
+        { "id": "t3l5", "title": "JOIN: Combining Tables", "steps": [
+          { "type": "text", "heading": "Match rows across tables", "body": "<b>JOIN</b> merges two tables by matching keys: orders know which user made them via <code>user_id</code>. <code>SELECT orders.id, users.name FROM orders JOIN users ON orders.user_id = users.id;</code> — now every order shows its owner's name.", "analogy": "Like pairing names on gift tags with the gifts under the tree." },
+          { "type": "quiz", "question": "A JOIN lets you…", "options": ["Delete duplicates", "Combine rows from two tables by a key", "Encrypt passwords", "Sort automatically"], "answer": 1, "explain": "JOIN links related tables via matching columns.", "hint": "Gift tags." }
         ]}
       ]
     },
@@ -215,6 +219,10 @@
         { "id": "t9l2", "title": "Make It Responsive", "steps": [
           { "type": "text", "heading": "Phones too", "body": "Responsive CSS makes your site look good on any screen. Use relative units (<code>%</code>, <code>rem</code>) instead of fixed pixels, and a <b>media query</b> like <code>@media (max-width: 600px)</code> for small screens.", "analogy": "Responsive design is clothes that fit whether you're tall or short." },
           { "type": "quiz", "question": "What does a media query do?", "options": ["Adds music", "Changes styles based on screen size", "Deletes CSS", "Hosts images"], "answer": 1, "explain": "@media rules adapt layout to the device.", "hint": "Phone vs desktop." }
+        ]},
+        { "id": "t9l3", "title": "CSS Variables: Write Once, Use Everywhere", "steps": [
+          { "type": "text", "heading": "Your theme in one place", "body": "<b>CSS variables</b> (custom properties) let you define a value once and reuse it: <code>:root { --main: #34d399; }</code> then <code>color: var(--main);</code>. Change one line, restyle the whole site.", "analogy": "Like a master light switch for your whole color palette." },
+          { "type": "quiz", "question": "What problem do CSS variables solve?", "options": ["They center divs", "They let you reuse/change values site-wide easily", "They add animations", "They host fonts"], "answer": 1, "explain": "One change, site-wide effect.", "hint": "Master switch." }
         ]}
       ]
     },
@@ -245,6 +253,26 @@
         { "id": "t11l2", "title": "How to Keep Learning", "steps": [
           { "type": "text", "heading": "Consistency beats intensity", "body": "20 minutes a day beats 5 hours once a week — that's spaced practice. Build something you actually want to use, get feedback, and don't fear the bugs. Every senior dev was once confused by a semicolon.", "analogy": "Learning to code is like the gym: small reps daily, not one giant session." },
           { "type": "quiz", "question": "Most effective study habit?", "options": ["One 8-hour weekend session", "Short, regular sessions", "Only watching videos", "Memorizing docs"], "answer": 1, "explain": "Spaced, short sessions win.", "hint": "Gym logic." }
+        ]}
+      ]
+    },
+    {
+      "id": "track12",
+      "icon": "⚛️",
+      "title": "Track 12 — Intro to React",
+      "lessons": [
+        { "id": "t12l1", "title": "Components: LEGO for UIs", "steps": [
+          { "type": "text", "heading": "Small pieces, big pages", "body": "<b>React</b> splits your page into <b>components</b> — reusable pieces like buttons, cards, and navbars. Each is just a function that returns UI. Compose them like LEGO.", "analogy": "A LEGO set: small bricks, snap together into a spaceship." },
+          { "type": "quiz", "question": "What is a component?", "options": ["A database", "A reusable piece of UI", "A type of server", "A CSS color"], "answer": 1, "explain": "Components = reusable UI blocks.", "hint": "LEGO brick." }
+        ]},
+        { "id": "t12l2", "title": "State: A Component's Memory", "steps": [
+          { "type": "text", "heading": "What the page remembers", "body": "<b>State</b> is data a component remembers and updates — like a click counter. When state changes, React re-renders that part of the page automatically.", "analogy": "State is a whiteboard the component keeps for itself." },
+          { "type": "quiz", "question": "What happens when state changes?", "options": ["The page reloads", "React re-renders that part", "Nothing", "The server restarts"], "answer": 1, "explain": "State change → UI updates.", "hint": "Whiteboard edit → display updates." },
+          { "type": "write", "heading": "Your turn ✍️", "body": "Log the number 0 — think of it as a click counter's starting state.", "expected": "0", "mustInclude": ["console.log"], "hint": "console.log(0);" }
+        ]},
+        { "id": "t12l3", "title": "Props: Passing Data Down", "steps": [
+          { "type": "text", "heading": "From parent to child", "body": "<b>Props</b> are how a parent component passes data to a child: <code>&lt;Card title=\"Hi\" /&gt;</code>. They flow one way — down.", "analogy": "Props are a gift from parent to child — opened, not returned." },
+          { "type": "quiz", "question": "Which way do props flow?", "options": ["Child to parent", "Parent to child", "Sideways", "To the server"], "answer": 1, "explain": "Props flow down the tree.", "hint": "Gifts from parent." }
         ]}
       ]
     }
