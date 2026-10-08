@@ -88,9 +88,9 @@ function renderProgress() {
     const total = t.lessons.length;
     const finished = t.lessons.filter(l => done.includes(l.id)).length;
     const pct = Math.round(finished / total * 100);
-    return `<div class="card"><h3>${t.icon} ${t.title}</h3>
+    return `<a class="card" href="lesson.html?lesson=${(t.lessons.find(l => !done.includes(l.id)) || t.lessons[0]).id}" style="text-decoration:none;color:inherit;display:block"><h3>${t.icon} ${t.title}</h3>
       <div class="progress" style="margin:10px 0 6px"><div style="width:${pct}%"></div></div>
-      <p>${finished}/${total} lessons · ${pct}% complete</p></div>`;
+      <p>${finished}/${total} lessons · ${pct}% complete</p></a>`;
   }).join('') + `<div class="card"><h3>🔁 Review due</h3><p>${dueCount} concept(s) waiting</p></div>` +
     `<div class="card"><h3>⏱️ Est. focus time</h3><p>${Math.round(store.get('xp', 0) * 0.8)} min</p></div>`;
 }
