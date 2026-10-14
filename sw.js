@@ -23,10 +23,14 @@ self.addEventListener('fetch', e => {
   }
 
   e.respondWith(
-    fetch(e.request)
+    // cache:'no-cache' forces revalidation with the server so edits are never
+    // served stale, even when the host sends no Cache-Control headers.
+    fetch(new Request(e.request, { cache: 'no-cache' }))
       .then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy));
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copy));
+        }
         return res;
       })
       .catch(() => caches.match(e.request).then(r => r || caches.match('index.html')))

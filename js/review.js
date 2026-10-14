@@ -43,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   };
-  function markDoneCount() { store.set('lastReview', new Date().toDateString()); }
+  function markDoneCount() { store.set('lastReview', new Date().toDateString()); renderBadges(); }
   show();
 });
